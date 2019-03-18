@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "tasks#index"
   # Routes for the Profile image resource:
 
   # CREATE
