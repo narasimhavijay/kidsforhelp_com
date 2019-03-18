@@ -4,6 +4,8 @@ RSpec.describe Task, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:poster) }
+
     end
 
     describe "InDirect Associations" do
