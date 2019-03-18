@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form feedback start -->
 <form action="/create_feedback" method="post">
-<!-- Form feedback end -->
 
-  <!-- Label and input for task_id start -->
   <div class="form-group">
     <label for="task_id">
       Task
     </label>
 
-    <!-- Input for task_id start -->
     <%= select_tag(:task_id, options_from_collection_for_select(Task.all, :id, :adult_id, @feedback.task_id), :class => "form-control") %>
-    <!-- Input for task_id end -->
   </div>
-  <!-- Label and input for task_id end -->
 
-  <!-- Label and input for comment start -->
   <div class="form-group">
     <label for="comment">
       Comment
     </label>
 
-    <!-- Input for comment start -->
     <input type="text" id="comment" name="comment" class="form-control">
-    <!-- Input for comment end -->
   </div>
-  <!-- Label and input for comment end -->
 
-  <!-- Label and input for ratings start -->
   <div class="form-group">
     <label for="ratings">
       Ratings
     </label>
 
-    <!-- Input for ratings start -->
     <input type="text" id="ratings" name="ratings" class="form-control">
-    <!-- Input for ratings end -->
   </div>
-  <!-- Label and input for ratings end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create feedback

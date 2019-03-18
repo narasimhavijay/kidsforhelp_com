@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @skill.user_skills.each do |user_skill| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/user_skills/<%= user_skill.id %>">
           <%= user_skill.skill_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_user_skill_from_skill/<%= user_skill.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="skill_user_skills_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "skill_templates/skill_user_skills_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

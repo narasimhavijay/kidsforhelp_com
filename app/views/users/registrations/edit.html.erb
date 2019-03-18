@@ -7,9 +7,7 @@
 
       <div class="card-body">
         <% was_validated = resource.errors.any? %>
-        <!-- Form html options start -->
         <% form_html_options = { method: :put, novalidate: true, class: "mb-3", multipart: true } %>
-        <!-- Form html options end -->
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: form_html_options) do |f| %>
 
           <% if flash[:notice].present? %>
@@ -147,7 +145,6 @@
           </div>
 
           
-          <!-- Devise Input for address_line1 start -->
           <div class="form-group">
             <% address_line1_was_invalid = resource.errors.include?(:address_line1) %>
 
@@ -173,9 +170,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for address_line1 end -->
           
-          <!-- Devise Input for address_line2 start -->
           <div class="form-group">
             <% address_line2_was_invalid = resource.errors.include?(:address_line2) %>
 
@@ -201,9 +196,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for address_line2 end -->
           
-          <!-- Devise Input for city start -->
           <div class="form-group">
             <% city_was_invalid = resource.errors.include?(:city) %>
 
@@ -229,9 +222,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for city end -->
           
-          <!-- Devise Input for state start -->
           <div class="form-group">
             <% state_was_invalid = resource.errors.include?(:state) %>
 
@@ -257,9 +248,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for state end -->
           
-          <!-- Devise Input for zipcode start -->
           <div class="form-group">
             <% zipcode_was_invalid = resource.errors.include?(:zipcode) %>
 
@@ -285,9 +274,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for zipcode end -->
           
-          <!-- Devise Input for country start -->
           <div class="form-group">
             <% country_was_invalid = resource.errors.include?(:country) %>
 
@@ -313,9 +300,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for country end -->
           
-          <!-- Devise Input for neighborhoodname start -->
           <div class="form-group">
             <% neighborhoodname_was_invalid = resource.errors.include?(:neighborhoodname) %>
 
@@ -341,9 +326,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for neighborhoodname end -->
           
-          <!-- Devise Input for profile_image start -->
           <div class="form-group">
             <% profile_image_was_invalid = resource.errors.include?(:profile_image) %>
 
@@ -369,9 +352,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for profile_image end -->
           
-          <!-- Devise Input for user_type start -->
           <div class="form-group">
             <% user_type_was_invalid = resource.errors.include?(:user_type) %>
 
@@ -397,9 +378,7 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for user_type end -->
           
-          <!-- Devise Input for first_name start -->
           <div class="form-group">
             <% first_name_was_invalid = resource.errors.include?(:first_name) %>
 
@@ -425,7 +404,6 @@
               <% end %>
             <% end %>
           </div>
-          <!-- Devise Input for first_name end -->
           <%= f.submit "Update", class: "btn btn-block btn-outline-primary" %>
         <% end %>
 

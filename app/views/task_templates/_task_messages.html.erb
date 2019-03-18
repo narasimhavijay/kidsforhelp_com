@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @task.messages.each do |message| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/messages/<%= message.id %>">
           <%= message.sender_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_message_from_task/<%= message.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="task_messages_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "task_templates/task_messages_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

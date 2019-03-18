@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.profile_images.each do |profile_image| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/profile_images/<%= profile_image.id %>">
           <%= profile_image.image_upload %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

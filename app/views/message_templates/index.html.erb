@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "message_templates/messages_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,13 +58,10 @@
 
       <% @messages.each do |message| %>
       <tr>
-        <!-- Display message.id start -->
         <td>
           <%= message.id %>
         </td>
-        <!-- Display message.id end -->
 
-        <!-- Display message.sender_id start -->
         <td>
           <% if message.sender.present? %>
             <a href="/users/<%= message.sender.id %>">
@@ -76,9 +69,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display message.sender_id end -->
 
-        <!-- Display message.recipient_id start -->
         <td>
           <% if message.recipient.present? %>
             <a href="/users/<%= message.recipient.id %>">
@@ -86,9 +77,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display message.recipient_id end -->
 
-        <!-- Display message.task_id start -->
         <td>
           <% if message.task.present? %>
             <a href="/tasks/<%= message.task.id %>">
@@ -96,25 +85,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display message.task_id end -->
 
-        <!-- Display message.message start -->
         <td>
           <%= message.message %>
         </td>
-        <!-- Display message.message end -->
 
-        <!-- Display message.created_at start -->
         <td>
           <%= time_ago_in_words(message.created_at) %> ago
         </td>
-        <!-- Display message.created_at end -->
 
-        <!-- Display message.updated_at start -->
         <td>
           <%= time_ago_in_words(message.updated_at) %> ago
         </td>
-        <!-- Display message.updated_at end -->
 
         <td>
           <a href="/messages/<%= message.id %>">

@@ -11,13 +11,11 @@
         </a>
       </div>
 
-      <!-- Edit link user start -->
       <div class="col">
         <a href="/users/<%= @user.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit user
         </a>
       </div>
-      <!-- Edit link user end -->
 
     </div>
 
@@ -25,133 +23,104 @@
       <dt>
         Address line1
       </dt>
-      <!-- Display address_line1 start -->
       <dd>
         <%= @user.address_line1 %>
       </dd>
-      <!-- Display address_line1 end -->
 
       <dt>
         Address line2
       </dt>
-      <!-- Display address_line2 start -->
       <dd>
         <%= @user.address_line2 %>
       </dd>
-      <!-- Display address_line2 end -->
 
       <dt>
         City
       </dt>
-      <!-- Display city start -->
       <dd>
         <%= @user.city %>
       </dd>
-      <!-- Display city end -->
 
       <dt>
         State
       </dt>
-      <!-- Display state start -->
       <dd>
         <%= @user.state %>
       </dd>
-      <!-- Display state end -->
 
       <dt>
         Zipcode
       </dt>
-      <!-- Display zipcode start -->
       <dd>
         <%= @user.zipcode %>
       </dd>
-      <!-- Display zipcode end -->
 
       <dt>
         Country
       </dt>
-      <!-- Display country start -->
       <dd>
         <%= @user.country %>
       </dd>
-      <!-- Display country end -->
 
       <dt>
         Neighborhoodname
       </dt>
-      <!-- Display neighborhoodname start -->
       <dd>
         <%= @user.neighborhoodname %>
       </dd>
-      <!-- Display neighborhoodname end -->
 
       <dt>
         Profile image
       </dt>
-      <!-- Display profile_image start -->
       <dd>
         <img src="<%= @user.profile_image %>" class="img-fluid">
       </dd>
-      <!-- Display profile_image end -->
 
       <dt>
         User type
       </dt>
-      <!-- Display user_type start -->
       <dd>
         <%= @user.user_type %>
       </dd>
-      <!-- Display user_type end -->
 
       <dt>
         First name
       </dt>
-      <!-- Display first_name start -->
       <dd>
         <%= @user.first_name %>
       </dd>
-      <!-- Display first_name end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @user.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Password
       </dt>
-      <!-- Display password start -->
       <dd>
         <%= @user.password %>
       </dd>
-      <!-- Display password end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@user.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@user.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "user_templates/user_profile_images" %>
@@ -199,4 +168,3 @@
     <%= render partial: "user_templates/user_posters" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

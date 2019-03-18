@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link message start -->
       <div class="col">
         <a href="/messages/<%= @message.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit message
         </a>
       </div>
-      <!-- Edit link message end -->
 
-      <!-- Delete link message start -->
       <div class="col">
         <a href="/delete_message/<%= @message.id %>" class="btn btn-block btn-outline-secondary">
           Delete message
         </a>
       </div>
-      <!-- Delete link message end -->
     </div>
 
     <dl>
       <dt>
         Sender
       </dt>
-      <!-- Display sender_id start -->
       <dd>
         <% if @message.sender.present? %>
           <a href="/users/<%= @message.sender_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display sender_id end -->
 
       <dt>
         Recipient
       </dt>
-      <!-- Display recipient_id start -->
       <dd>
         <% if @message.recipient.present? %>
           <a href="/users/<%= @message.recipient_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display recipient_id end -->
 
       <dt>
         Task
       </dt>
-      <!-- Display task_id start -->
       <dd>
         <% if @message.task.present? %>
           <a href="/tasks/<%= @message.task_id %>">
@@ -66,37 +57,28 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display task_id end -->
 
       <dt>
         Message
       </dt>
-      <!-- Display message start -->
       <dd>
         <%= @message.message %>
       </dd>
-      <!-- Display message end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@message.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@message.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

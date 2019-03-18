@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link profile_image start -->
       <div class="col">
         <a href="/profile_images/<%= @profile_image.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit profile image
         </a>
       </div>
-      <!-- Edit link profile_image end -->
 
-      <!-- Delete link profile_image start -->
       <div class="col">
         <a href="/delete_profile_image/<%= @profile_image.id %>" class="btn btn-block btn-outline-secondary">
           Delete profile image
         </a>
       </div>
-      <!-- Delete link profile_image end -->
     </div>
 
     <dl>
       <dt>
         Image upload
       </dt>
-      <!-- Display image_upload start -->
       <dd>
         <%= @profile_image.image_upload %>
       </dd>
-      <!-- Display image_upload end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @profile_image.user.present? %>
           <a href="/users/<%= @profile_image.user_id %>">
@@ -49,28 +42,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@profile_image.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@profile_image.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.user_skills.each do |user_skill| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/user_skills/<%= user_skill.id %>">
           <%= user_skill.skill_id %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>

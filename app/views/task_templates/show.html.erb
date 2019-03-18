@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link task start -->
       <div class="col">
         <a href="/tasks/<%= @task.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit task
         </a>
       </div>
-      <!-- Edit link task end -->
 
-      <!-- Delete link task start -->
       <div class="col">
         <a href="/delete_task/<%= @task.id %>" class="btn btn-block btn-outline-secondary">
           Delete task
         </a>
       </div>
-      <!-- Delete link task end -->
     </div>
 
     <dl>
       <dt>
         Adult
       </dt>
-      <!-- Display adult_id start -->
       <dd>
         <% if @task.poster.present? %>
           <a href="/users/<%= @task.adult_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display adult_id end -->
 
       <dt>
         Kid
       </dt>
-      <!-- Display kid_id start -->
       <dd>
         <% if @task.helper.present? %>
           <a href="/users/<%= @task.kid_id %>">
@@ -53,57 +46,45 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display kid_id end -->
 
       <dt>
         Status
       </dt>
-      <!-- Display status start -->
       <dd>
         <%= @task.status %>
       </dd>
-      <!-- Display status end -->
 
       <dt>
         Task desc
       </dt>
-      <!-- Display task_desc start -->
       <dd>
         <%= @task.task_desc %>
       </dd>
-      <!-- Display task_desc end -->
 
       <dt>
         Image uploads
       </dt>
-      <!-- Display image_uploads start -->
       <dd>
         <%= @task.image_uploads %>
       </dd>
-      <!-- Display image_uploads end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@task.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@task.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "task_templates/task_feedbacks" %>
@@ -115,4 +96,3 @@
     <%= render partial: "task_templates/task_messages" %>
   </div>
 </div>
-<!-- Show Page Customization end -->
