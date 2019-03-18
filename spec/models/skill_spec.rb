@@ -4,6 +4,8 @@ RSpec.describe Skill, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:user_skills) }
+
     end
 
     describe "InDirect Associations" do
