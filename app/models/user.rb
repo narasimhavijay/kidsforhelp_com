@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :sent_messages,
+             :class_name => "Message",
+             :foreign_key => "sender_id",
+             :dependent => :destroy
+
   has_many   :tasks_as_helper,
              :class_name => "Task",
              :foreign_key => "kid_id",
