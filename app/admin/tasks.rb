@@ -1,4 +1,6 @@
 ActiveAdmin.register Task do
+
+ permit_params :adult_id, :kid_id, :status, :task_desc, :image_uploads
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
