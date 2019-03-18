@@ -15,7 +15,7 @@
     </label>
 
     <!-- Input for skill_id start -->
-    <input type="text" id="skill_id" name="skill_id" class="form-control" value="<%= @user_skill.skill_id %>">
+    <%= select_tag(:skill_id, options_from_collection_for_select(Skill.all, :id, :name, @user_skill.skill_id), :class => "form-control") %>
     <!-- Input for skill_id end -->
   </div>
   <!-- Label and input for skill_id end -->
