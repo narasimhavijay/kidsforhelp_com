@@ -1,6 +1,6 @@
 class UserSkillsController < ApplicationController
   def index
-    @user_skills = UserSkill.all
+    @user_skills = UserSkill.page(params[:page]).per(10)
 
     render("user_skill_templates/index.html.erb")
   end

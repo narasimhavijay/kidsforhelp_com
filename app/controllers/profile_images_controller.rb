@@ -1,6 +1,6 @@
 class ProfileImagesController < ApplicationController
   def index
-    @profile_images = ProfileImage.all
+    @profile_images = ProfileImage.page(params[:page]).per(10)
 
     render("profile_image_templates/index.html.erb")
   end
