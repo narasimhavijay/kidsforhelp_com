@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.page(params[:page]).per(10)
+    @q = Message.ransack(params[:q])
+    @messages = @q.result(:distinct => true).includes(:sender, :recipient, :task).page(params[:page]).per(10)
 
     render("message_templates/index.html.erb")
   end

@@ -1,6 +1,7 @@
 class ProfileImagesController < ApplicationController
   def index
-    @profile_images = ProfileImage.page(params[:page]).per(10)
+    @q = ProfileImage.ransack(params[:q])
+    @profile_images = @q.result(:distinct => true).includes(:user).page(params[:page]).per(10)
 
     render("profile_image_templates/index.html.erb")
   end
