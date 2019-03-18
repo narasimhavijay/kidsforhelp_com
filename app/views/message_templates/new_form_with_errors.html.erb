@@ -1,0 +1,80 @@
+<!-- Validation failure messages -->
+<% if @message.present? %>
+  <% if @message.errors.any? %>
+    <% @message.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new message
+</h1>
+
+
+<hr>
+
+<!-- Form message start -->
+<form action="/create_message" method="post">
+<!-- Form message end -->
+
+  <!-- Label and input for sender_id start -->
+  <div class="form-group">
+    <label for="sender_id">
+      Sender
+    </label>
+
+    <!-- Input for sender_id start -->
+    <input type="text" id="sender_id" name="sender_id" class="form-control" value="<%= @message.sender_id %>">
+    <!-- Input for sender_id end -->
+  </div>
+  <!-- Label and input for sender_id end -->
+
+  <!-- Label and input for recipient_id start -->
+  <div class="form-group">
+    <label for="recipient_id">
+      Recipient
+    </label>
+
+    <!-- Input for recipient_id start -->
+    <input type="text" id="recipient_id" name="recipient_id" class="form-control" value="<%= @message.recipient_id %>">
+    <!-- Input for recipient_id end -->
+  </div>
+  <!-- Label and input for recipient_id end -->
+
+  <!-- Label and input for task_id start -->
+  <div class="form-group">
+    <label for="task_id">
+      Task
+    </label>
+
+    <!-- Input for task_id start -->
+    <input type="text" id="task_id" name="task_id" class="form-control" value="<%= @message.task_id %>">
+    <!-- Input for task_id end -->
+  </div>
+  <!-- Label and input for task_id end -->
+
+  <!-- Label and input for message start -->
+  <div class="form-group">
+    <label for="message">
+      Message
+    </label>
+
+    <!-- Input for message start -->
+    <input type="text" id="message" name="message" class="form-control" value="<%= @message.message %>">
+    <!-- Input for message end -->
+  </div>
+  <!-- Label and input for message end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create message
+  </button>
+</form>
+
+<hr>
+
+<a href="/messages">
+  Go back
+</a>

@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Message #<%= @message.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/messages" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link message start -->
+      <div class="col">
+        <a href="/messages/<%= @message.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit message
+        </a>
+      </div>
+      <!-- Edit link message end -->
+
+      <!-- Delete link message start -->
+      <div class="col">
+        <a href="/delete_message/<%= @message.id %>" class="btn btn-block btn-outline-secondary">
+          Delete message
+        </a>
+      </div>
+      <!-- Delete link message end -->
+    </div>
+
+    <dl>
+      <dt>
+        Sender
+      </dt>
+      <!-- Display sender_id start -->
+      <dd>
+        <%= @message.sender_id %>
+      </dd>
+      <!-- Display sender_id end -->
+
+      <dt>
+        Recipient
+      </dt>
+      <!-- Display recipient_id start -->
+      <dd>
+        <%= @message.recipient_id %>
+      </dd>
+      <!-- Display recipient_id end -->
+
+      <dt>
+        Task
+      </dt>
+      <!-- Display task_id start -->
+      <dd>
+        <%= @message.task_id %>
+      </dd>
+      <!-- Display task_id end -->
+
+      <dt>
+        Message
+      </dt>
+      <!-- Display message start -->
+      <dd>
+        <%= @message.message %>
+      </dd>
+      <!-- Display message end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@message.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@message.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
