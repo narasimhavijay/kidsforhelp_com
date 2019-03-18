@@ -1,0 +1,92 @@
+<!-- Validation failure messages -->
+<% if @task.present? %>
+  <% if @task.errors.any? %>
+    <% @task.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new task
+</h1>
+
+
+<hr>
+
+<!-- Form task start -->
+<form action="/create_task" method="post">
+<!-- Form task end -->
+
+  <!-- Label and input for adult_id start -->
+  <div class="form-group">
+    <label for="adult_id">
+      Adult
+    </label>
+
+    <!-- Input for adult_id start -->
+    <input type="text" id="adult_id" name="adult_id" class="form-control" value="<%= @task.adult_id %>">
+    <!-- Input for adult_id end -->
+  </div>
+  <!-- Label and input for adult_id end -->
+
+  <!-- Label and input for kid_id start -->
+  <div class="form-group">
+    <label for="kid_id">
+      Kid
+    </label>
+
+    <!-- Input for kid_id start -->
+    <input type="text" id="kid_id" name="kid_id" class="form-control" value="<%= @task.kid_id %>">
+    <!-- Input for kid_id end -->
+  </div>
+  <!-- Label and input for kid_id end -->
+
+  <!-- Label and input for status start -->
+  <div class="form-group">
+    <label for="status">
+      Status
+    </label>
+
+    <!-- Input for status start -->
+    <input type="text" id="status" name="status" class="form-control" value="<%= @task.status %>">
+    <!-- Input for status end -->
+  </div>
+  <!-- Label and input for status end -->
+
+  <!-- Label and input for task_desc start -->
+  <div class="form-group">
+    <label for="task_desc">
+      Task desc
+    </label>
+
+    <!-- Input for task_desc start -->
+    <input type="text" id="task_desc" name="task_desc" class="form-control" value="<%= @task.task_desc %>">
+    <!-- Input for task_desc end -->
+  </div>
+  <!-- Label and input for task_desc end -->
+
+  <!-- Label and input for image_uploads start -->
+  <div class="form-group">
+    <label for="image_uploads">
+      Image uploads
+    </label>
+
+    <!-- Input for image_uploads start -->
+    <input type="text" id="image_uploads" name="image_uploads" class="form-control" value="<%= @task.image_uploads %>">
+    <!-- Input for image_uploads end -->
+  </div>
+  <!-- Label and input for image_uploads end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create task
+  </button>
+</form>
+
+<hr>
+
+<a href="/tasks">
+  Go back
+</a>
