@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  mount_uploader :profile_image, ProfileImageUploader
+
   # Direct associations
 
   has_many   :user_skills,
