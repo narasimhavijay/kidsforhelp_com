@@ -1,6 +1,9 @@
 class Task < ApplicationRecord
   # Direct associations
 
+  has_many   :feedbacks,
+             :dependent => :destroy
+
   belongs_to :helper,
              :class_name => "User",
              :foreign_key => "kid_id"
