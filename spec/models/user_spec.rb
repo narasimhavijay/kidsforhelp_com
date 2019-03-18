@@ -4,6 +4,8 @@ RSpec.describe User, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:tasks_as_helper) }
+
     it { should have_many(:tasks_as_poster) }
 
     it { should have_many(:profile_images) }

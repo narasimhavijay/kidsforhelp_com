@@ -1,6 +1,11 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :tasks_as_helper,
+             :class_name => "Task",
+             :foreign_key => "kid_id",
+             :dependent => :destroy
+
   has_many   :tasks_as_poster,
              :class_name => "Task",
              :foreign_key => "adult_id",
