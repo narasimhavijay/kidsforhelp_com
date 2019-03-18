@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Profile image resource:
+
+  # CREATE
+  get("/profile_images/new", { :controller => "profile_images", :action => "new_form" })
+  post("/create_profile_image", { :controller => "profile_images", :action => "create_row" })
+
+  # READ
+  get("/profile_images", { :controller => "profile_images", :action => "index" })
+  get("/profile_images/:id_to_display", { :controller => "profile_images", :action => "show" })
+
+  # UPDATE
+  get("/profile_images/:prefill_with_id/edit", { :controller => "profile_images", :action => "edit_form" })
+  post("/update_profile_image/:id_to_modify", { :controller => "profile_images", :action => "update_row" })
+
+  # DELETE
+  get("/delete_profile_image/:id_to_remove", { :controller => "profile_images", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Message resource:
 
   # CREATE

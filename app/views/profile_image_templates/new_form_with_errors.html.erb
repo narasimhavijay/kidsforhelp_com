@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @profile_image.present? %>
+  <% if @profile_image.errors.any? %>
+    <% @profile_image.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new profile image
+</h1>
+
+
+<hr>
+
+<!-- Form profile_image start -->
+<form action="/create_profile_image" method="post">
+<!-- Form profile_image end -->
+
+  <!-- Label and input for image_upload start -->
+  <div class="form-group">
+    <label for="image_upload">
+      Image upload
+    </label>
+
+    <!-- Input for image_upload start -->
+    <input type="text" id="image_upload" name="image_upload" class="form-control" value="<%= @profile_image.image_upload %>">
+    <!-- Input for image_upload end -->
+  </div>
+  <!-- Label and input for image_upload end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @profile_image.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create profile image
+  </button>
+</form>
+
+<hr>
+
+<a href="/profile_images">
+  Go back
+</a>
