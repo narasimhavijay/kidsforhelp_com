@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for adult_id start -->
-    <input type="text" id="adult_id" name="adult_id" class="form-control" value="<%= @task.adult_id %>">
+    <%= select_tag(:adult_id, options_from_collection_for_select(User.all, :id, :created_at, @task.adult_id), :class => "form-control") %>
     <!-- Input for adult_id end -->
   </div>
   <!-- Label and input for adult_id end -->
