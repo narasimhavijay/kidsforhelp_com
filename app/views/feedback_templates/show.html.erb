@@ -34,7 +34,11 @@
       </dt>
       <!-- Display task_id start -->
       <dd>
-        <%= @feedback.task_id %>
+        <% if @feedback.task.present? %>
+          <a href="/tasks/<%= @feedback.task_id %>">
+            <%= @feedback.task.adult_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display task_id end -->
 

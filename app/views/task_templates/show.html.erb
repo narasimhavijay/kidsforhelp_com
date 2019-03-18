@@ -34,7 +34,11 @@
       </dt>
       <!-- Display adult_id start -->
       <dd>
-        <%= @task.adult_id %>
+        <% if @task.poster.present? %>
+          <a href="/users/<%= @task.adult_id %>">
+            <%= @task.poster.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display adult_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display kid_id start -->
       <dd>
-        <%= @task.kid_id %>
+        <% if @task.helper.present? %>
+          <a href="/users/<%= @task.kid_id %>">
+            <%= @task.helper.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display kid_id end -->
 

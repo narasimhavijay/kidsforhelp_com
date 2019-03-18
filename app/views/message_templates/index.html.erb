@@ -66,19 +66,31 @@
 
         <!-- Display message.sender_id start -->
         <td>
-          <%= message.sender.created_at %>
+          <% if message.sender.present? %>
+            <a href="/users/<%= message.sender.id %>">
+              <%= message.sender.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display message.sender_id end -->
 
         <!-- Display message.recipient_id start -->
         <td>
-          <%= message.recipient.created_at %>
+          <% if message.recipient.present? %>
+            <a href="/users/<%= message.recipient.id %>">
+              <%= message.recipient.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display message.recipient_id end -->
 
         <!-- Display message.task_id start -->
         <td>
-          <%= message.task.adult_id %>
+          <% if message.task.present? %>
+            <a href="/tasks/<%= message.task.id %>">
+              <%= message.task.adult_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display message.task_id end -->
 

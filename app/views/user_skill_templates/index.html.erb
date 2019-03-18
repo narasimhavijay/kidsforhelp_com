@@ -58,13 +58,21 @@
 
         <!-- Display user_skill.skill_id start -->
         <td>
-          <%= user_skill.skill.name %>
+          <% if user_skill.skill.present? %>
+            <a href="/skills/<%= user_skill.skill.id %>">
+              <%= user_skill.skill.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_skill.skill_id end -->
 
         <!-- Display user_skill.kid_id start -->
         <td>
-          <%= user_skill.kid.created_at %>
+          <% if user_skill.kid.present? %>
+            <a href="/users/<%= user_skill.kid.id %>">
+              <%= user_skill.kid.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display user_skill.kid_id end -->
 

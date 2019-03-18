@@ -64,7 +64,11 @@
 
         <!-- Display profile_image.user_id start -->
         <td>
-          <%= profile_image.user.created_at %>
+          <% if profile_image.user.present? %>
+            <a href="/users/<%= profile_image.user.id %>">
+              <%= profile_image.user.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display profile_image.user_id end -->
 

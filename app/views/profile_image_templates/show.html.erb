@@ -43,7 +43,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @profile_image.user_id %>
+        <% if @profile_image.user.present? %>
+          <a href="/users/<%= @profile_image.user_id %>">
+            <%= @profile_image.user.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 

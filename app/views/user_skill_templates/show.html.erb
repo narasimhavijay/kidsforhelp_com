@@ -34,7 +34,11 @@
       </dt>
       <!-- Display skill_id start -->
       <dd>
-        <%= @user_skill.skill_id %>
+        <% if @user_skill.skill.present? %>
+          <a href="/skills/<%= @user_skill.skill_id %>">
+            <%= @user_skill.skill.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display skill_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display kid_id start -->
       <dd>
-        <%= @user_skill.kid_id %>
+        <% if @user_skill.kid.present? %>
+          <a href="/users/<%= @user_skill.kid_id %>">
+            <%= @user_skill.kid.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display kid_id end -->
 

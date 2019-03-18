@@ -70,13 +70,21 @@
 
         <!-- Display task.adult_id start -->
         <td>
-          <%= task.poster.created_at %>
+          <% if task.poster.present? %>
+            <a href="/users/<%= task.poster.id %>">
+              <%= task.poster.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display task.adult_id end -->
 
         <!-- Display task.kid_id start -->
         <td>
-          <%= task.helper.created_at %>
+          <% if task.helper.present? %>
+            <a href="/users/<%= task.helper.id %>">
+              <%= task.helper.created_at %>
+            </a>
+          <% end %>
         </td>
         <!-- Display task.kid_id end -->
 

@@ -34,7 +34,11 @@
       </dt>
       <!-- Display sender_id start -->
       <dd>
-        <%= @message.sender_id %>
+        <% if @message.sender.present? %>
+          <a href="/users/<%= @message.sender_id %>">
+            <%= @message.sender.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display sender_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display recipient_id start -->
       <dd>
-        <%= @message.recipient_id %>
+        <% if @message.recipient.present? %>
+          <a href="/users/<%= @message.recipient_id %>">
+            <%= @message.recipient.created_at %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display recipient_id end -->
 
@@ -52,7 +60,11 @@
       </dt>
       <!-- Display task_id start -->
       <dd>
-        <%= @message.task_id %>
+        <% if @message.task.present? %>
+          <a href="/tasks/<%= @message.task_id %>">
+            <%= @message.task.adult_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display task_id end -->
 

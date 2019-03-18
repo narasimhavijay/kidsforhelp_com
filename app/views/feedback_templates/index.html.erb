@@ -62,7 +62,11 @@
 
         <!-- Display feedback.task_id start -->
         <td>
-          <%= feedback.task.adult_id %>
+          <% if feedback.task.present? %>
+            <a href="/tasks/<%= feedback.task.id %>">
+              <%= feedback.task.adult_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display feedback.task_id end -->
 
