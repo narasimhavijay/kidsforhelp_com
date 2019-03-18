@@ -1,6 +1,9 @@
 class Task < ApplicationRecord
   # Direct associations
 
+  has_many   :messages,
+             :dependent => :destroy
+
   has_many   :feedbacks,
              :dependent => :destroy
 
