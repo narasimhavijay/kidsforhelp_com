@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the User skill resource:
+
+  # CREATE
+  get("/user_skills/new", { :controller => "user_skills", :action => "new_form" })
+  post("/create_user_skill", { :controller => "user_skills", :action => "create_row" })
+
+  # READ
+  get("/user_skills", { :controller => "user_skills", :action => "index" })
+  get("/user_skills/:id_to_display", { :controller => "user_skills", :action => "show" })
+
+  # UPDATE
+  get("/user_skills/:prefill_with_id/edit", { :controller => "user_skills", :action => "edit_form" })
+  post("/update_user_skill/:id_to_modify", { :controller => "user_skills", :action => "update_row" })
+
+  # DELETE
+  get("/delete_user_skill/:id_to_remove", { :controller => "user_skills", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Skill resource:
 
   # CREATE
