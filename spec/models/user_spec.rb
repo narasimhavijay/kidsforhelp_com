@@ -20,6 +20,10 @@ RSpec.describe User, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_many(:posters) }
+
+    it { should have_many(:helpers) }
+
     end
 
     describe "Validations" do

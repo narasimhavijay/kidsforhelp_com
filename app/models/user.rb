@@ -30,6 +30,14 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :posters,
+             :through => :tasks_as_helper,
+             :source => :poster
+
+  has_many   :helpers,
+             :through => :tasks_as_poster,
+             :source => :helper
+
   # Validations
 
   # Include default devise modules. Others available are:
