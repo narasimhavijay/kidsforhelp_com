@@ -32,6 +32,21 @@ class UserSkillsController < ApplicationController
     end
   end
 
+  def create_row_from_skill
+    @user_skill = UserSkill.new
+
+    @user_skill.skill_id = params.fetch("skill_id")
+    @user_skill.kid_id = params.fetch("kid_id")
+
+    if @user_skill.valid?
+      @user_skill.save
+
+      redirect_to("/skills/#{@user_skill.skill_id}", notice: "UserSkill created successfully.")
+    else
+      render("user_skill_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @user_skill = UserSkill.find(params.fetch("prefill_with_id"))
 

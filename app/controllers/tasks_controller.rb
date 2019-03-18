@@ -6,6 +6,8 @@ class TasksController < ApplicationController
   end
 
   def show
+    @message = Message.new
+    @feedback = Feedback.new
     @task = Task.find(params.fetch("id_to_display"))
 
     render("task_templates/show.html.erb")

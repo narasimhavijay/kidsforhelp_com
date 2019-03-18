@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/messages/new", { :controller => "messages", :action => "new_form" })
   post("/create_message", { :controller => "messages", :action => "create_row" })
+  post("/create_message_from_task", { :controller => "messages", :action => "create_row_from_task" })
 
   # READ
   get("/messages", { :controller => "messages", :action => "index" })
@@ -49,6 +50,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/feedbacks/new", { :controller => "feedbacks", :action => "new_form" })
   post("/create_feedback", { :controller => "feedbacks", :action => "create_row" })
+  post("/create_feedback_from_task", { :controller => "feedbacks", :action => "create_row_from_task" })
 
   # READ
   get("/feedbacks", { :controller => "feedbacks", :action => "index" })
@@ -69,6 +71,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/user_skills/new", { :controller => "user_skills", :action => "new_form" })
   post("/create_user_skill", { :controller => "user_skills", :action => "create_row" })
+  post("/create_user_skill_from_skill", { :controller => "user_skills", :action => "create_row_from_skill" })
 
   # READ
   get("/user_skills", { :controller => "user_skills", :action => "index" })

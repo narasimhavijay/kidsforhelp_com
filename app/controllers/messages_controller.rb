@@ -34,6 +34,23 @@ class MessagesController < ApplicationController
     end
   end
 
+  def create_row_from_task
+    @message = Message.new
+
+    @message.sender_id = params.fetch("sender_id")
+    @message.recipient_id = params.fetch("recipient_id")
+    @message.task_id = params.fetch("task_id")
+    @message.message = params.fetch("message")
+
+    if @message.valid?
+      @message.save
+
+      redirect_to("/tasks/#{@message.task_id}", notice: "Message created successfully.")
+    else
+      render("message_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @message = Message.find(params.fetch("prefill_with_id"))
 

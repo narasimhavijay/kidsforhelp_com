@@ -6,6 +6,7 @@ class SkillsController < ApplicationController
   end
 
   def show
+    @user_skill = UserSkill.new
     @skill = Skill.find(params.fetch("id_to_display"))
 
     render("skill_templates/show.html.erb")

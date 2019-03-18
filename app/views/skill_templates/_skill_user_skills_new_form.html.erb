@@ -1,0 +1,25 @@
+<!-- Form user_skill start -->
+<form action="/create_user_skill_from_skill" method="post">
+<!-- Form user_skill end -->
+
+  <!-- Label and input for skill_id start -->
+  <!-- Input for skill_id start -->
+  <input type="hidden" name="skill_id" value="<%= @skill.id %>">
+  <!-- Input for skill_id end -->
+
+  <!-- Label and input for kid_id start -->
+  <div class="form-group">
+    <label for="kid_id">
+      Kid
+    </label>
+
+    <!-- Input for kid_id start -->
+    <input type="text" id="kid_id" name="kid_id" class="form-control" value="<%= @user_skill.kid_id %>">
+    <!-- Input for kid_id end -->
+  </div>
+  <!-- Label and input for kid_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create user skill
+  </button>
+</form>
