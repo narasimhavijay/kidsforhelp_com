@@ -53,6 +53,22 @@ class UserSkillsController < ApplicationController
     end
   end
 
+  def destroy_row_from_kid
+    @user_skill = UserSkill.find(params.fetch("id_to_remove"))
+
+    @user_skill.destroy
+
+    redirect_to("/users/#{@user_skill.kid_id}", notice: "UserSkill deleted successfully.")
+  end
+
+  def destroy_row_from_skill
+    @user_skill = UserSkill.find(params.fetch("id_to_remove"))
+
+    @user_skill.destroy
+
+    redirect_to("/skills/#{@user_skill.skill_id}", notice: "UserSkill deleted successfully.")
+  end
+
   def destroy_row
     @user_skill = UserSkill.find(params.fetch("id_to_remove"))
 

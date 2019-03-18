@@ -53,6 +53,14 @@ class ProfileImagesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @profile_image = ProfileImage.find(params.fetch("id_to_remove"))
+
+    @profile_image.destroy
+
+    redirect_to("/users/#{@profile_image.user_id}", notice: "ProfileImage deleted successfully.")
+  end
+
   def destroy_row
     @profile_image = ProfileImage.find(params.fetch("id_to_remove"))
 

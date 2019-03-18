@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_profile_image/:id_to_remove", { :controller => "profile_images", :action => "destroy_row" })
+  get("/delete_profile_image_from_user/:id_to_remove", { :controller => "profile_images", :action => "destroy_row_from_user" })
 
   #------------------------------
 
@@ -37,6 +38,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_message/:id_to_remove", { :controller => "messages", :action => "destroy_row" })
+  get("/delete_message_from_task/:id_to_remove", { :controller => "messages", :action => "destroy_row_from_task" })
+  get("/delete_message_from_recipient/:id_to_remove", { :controller => "messages", :action => "destroy_row_from_recipient" })
+  get("/delete_message_from_sender/:id_to_remove", { :controller => "messages", :action => "destroy_row_from_sender" })
 
   #------------------------------
 
@@ -56,6 +60,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_feedback/:id_to_remove", { :controller => "feedbacks", :action => "destroy_row" })
+  get("/delete_feedback_from_task/:id_to_remove", { :controller => "feedbacks", :action => "destroy_row_from_task" })
 
   #------------------------------
 
@@ -75,6 +80,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_user_skill/:id_to_remove", { :controller => "user_skills", :action => "destroy_row" })
+  get("/delete_user_skill_from_skill/:id_to_remove", { :controller => "user_skills", :action => "destroy_row_from_skill" })
+  get("/delete_user_skill_from_kid/:id_to_remove", { :controller => "user_skills", :action => "destroy_row_from_kid" })
 
   #------------------------------
 
@@ -113,6 +120,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_task/:id_to_remove", { :controller => "tasks", :action => "destroy_row" })
+  get("/delete_task_from_helper/:id_to_remove", { :controller => "tasks", :action => "destroy_row_from_helper" })
+  get("/delete_task_from_poster/:id_to_remove", { :controller => "tasks", :action => "destroy_row_from_poster" })
 
   #------------------------------
 

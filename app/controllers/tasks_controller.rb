@@ -59,6 +59,22 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy_row_from_poster
+    @task = Task.find(params.fetch("id_to_remove"))
+
+    @task.destroy
+
+    redirect_to("/users/#{@task.adult_id}", notice: "Task deleted successfully.")
+  end
+
+  def destroy_row_from_helper
+    @task = Task.find(params.fetch("id_to_remove"))
+
+    @task.destroy
+
+    redirect_to("/users/#{@task.kid_id}", notice: "Task deleted successfully.")
+  end
+
   def destroy_row
     @task = Task.find(params.fetch("id_to_remove"))
 
