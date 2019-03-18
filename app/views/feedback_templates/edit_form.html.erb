@@ -1,0 +1,56 @@
+<h1>
+  Edit feedback #<%= @feedback.id %>
+</h1>
+
+<hr>
+
+<!-- Form feedback start -->
+<form action="/update_feedback/<%= @feedback.id %>" method="post">
+<!-- Form feedback end -->
+
+  <!-- Label and input for task_id start -->
+  <div class="form-group">
+    <label for="task_id">
+      Task
+    </label>
+
+    <!-- Input for task_id start -->
+    <input type="text" id="task_id" name="task_id" class="form-control" value="<%= @feedback.task_id %>">
+    <!-- Input for task_id end -->
+  </div>
+  <!-- Label and input for task_id end -->
+
+  <!-- Label and input for comment start -->
+  <div class="form-group">
+    <label for="comment">
+      Comment
+    </label>
+
+    <!-- Input for comment start -->
+    <input type="text" id="comment" name="comment" class="form-control" value="<%= @feedback.comment %>">
+    <!-- Input for comment end -->
+  </div>
+  <!-- Label and input for comment end -->
+
+  <!-- Label and input for ratings start -->
+  <div class="form-group">
+    <label for="ratings">
+      Ratings
+    </label>
+
+    <!-- Input for ratings start -->
+    <input type="text" id="ratings" name="ratings" class="form-control" value="<%= @feedback.ratings %>">
+    <!-- Input for ratings end -->
+  </div>
+  <!-- Label and input for ratings end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update feedback
+  </button>
+</form>
+
+<hr>
+
+<a href="/feedbacks">
+  Go back
+</a>
