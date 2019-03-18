@@ -1,0 +1,32 @@
+<h1>
+  Edit skill #<%= @skill.id %>
+</h1>
+
+<hr>
+
+<!-- Form skill start -->
+<form action="/update_skill/<%= @skill.id %>" method="post">
+<!-- Form skill end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @skill.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update skill
+  </button>
+</form>
+
+<hr>
+
+<a href="/skills">
+  Go back
+</a>
