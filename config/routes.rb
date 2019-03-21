@@ -134,6 +134,7 @@ Rails.application.routes.draw do
   # READ
   get("/users", { :controller => "users", :action => "show" })
   get("/users/:id_to_display", { :controller => "users", :action => "show" })
+  post("/users/:id_to_modify/edit", { :controller => "users", :action => "update_row" })
 
   #------------------------------
 
