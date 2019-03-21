@@ -9,7 +9,7 @@ end
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 group :development do
-  gem "sqlite3"
+  gem "sqlite3", "~> 1.3", "< 1.4"
 end
 
 group :production do

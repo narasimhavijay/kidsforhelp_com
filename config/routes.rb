@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  root :to => "tasks#index"
+  root :to => "users#show"
   # Routes for the Profile image resource:
 
   # CREATE
@@ -132,7 +132,7 @@ Rails.application.routes.draw do
   # Routes for the User resource:
 
   # READ
-  get("/users", { :controller => "users", :action => "index" })
+  get("/users", { :controller => "users", :action => "show" })
   get("/users/:id_to_display", { :controller => "users", :action => "show" })
 
   #------------------------------
